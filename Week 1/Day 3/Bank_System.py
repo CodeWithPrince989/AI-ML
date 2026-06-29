@@ -1,7 +1,6 @@
 class BankAccount:
-    def __init__(self, account_number, account_holder, balance=0):
+    def __init__(self, account_number, balance=0):
         self.account_number = account_number
-        self.account_holder = account_holder
         self.balance = balance
 
     def deposit(self, amount):
@@ -27,28 +26,14 @@ def main():
 
     while True:
         print("\n--- Banking System ---")
-        print("1. Create Account")
-        print("2. Deposit")
-        print("3. Withdraw")
-        print("4. Check Balance")
-        print("5. Exit")
+        print("1. Deposit")
+        print("2. Withdraw")
+        print("3. Check Balance")
+        print("4. Exit")
 
         choice = input("Enter your choice: ")
 
         if choice == "1":
-            account_number = input("Enter account number: ")
-            account_holder = input("Enter account holder name: ")
-            initial_balance = float(input("Enter initial balance: "))
-
-            accounts[account_number] = BankAccount(
-                account_number,
-                account_holder,
-                initial_balance
-            )
-
-            print("Account created successfully!")
-
-        elif choice == "2":
             account_number = input("Enter account number: ")
 
             if account_number in accounts:
@@ -57,7 +42,7 @@ def main():
             else:
                 print("Account not found.")
 
-        elif choice == "3":
+        elif choice == "2":
             account_number = input("Enter account number: ")
 
             if account_number in accounts:
@@ -66,7 +51,7 @@ def main():
             else:
                 print("Account not found.")
 
-        elif choice == "4":
+        elif choice == "3":
             account_number = input("Enter account number: ")
 
             if account_number in accounts:
@@ -74,7 +59,7 @@ def main():
             else:
                 print("Account not found.")
 
-        elif choice == "5":
+        elif choice == "4":
             print("Exiting...")
             break
 
